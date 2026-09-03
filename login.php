@@ -24,7 +24,9 @@ if($_SERVER['REQUEST_METHOD'] === 'POST') {
 
             if(password_verify($password, $usuario['password'])) {
 
-                session_start();
+                if (session_status() === PHP_SESSION_NONE) {
+                    session_start();
+                }
                 $_SESSION['login'] = true;
 
                 header('Location: /admin/');

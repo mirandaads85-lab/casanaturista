@@ -16,6 +16,10 @@ RUN echo "ServerName localhost" >> /etc/apache2/apache2.conf
 # Copia todo el proyecto al directorio público de Apache
 COPY . /var/www/html/
 
+# Aplica la configuración de producción de PHP (oculta errores en pantalla,
+# los deja solo en el log del contenedor)
+RUN cp /var/www/html/docker/production.ini /usr/local/etc/php/conf.d/production.ini
+
 # Permisos básicos
 RUN chown -R www-data:www-data /var/www/html
 

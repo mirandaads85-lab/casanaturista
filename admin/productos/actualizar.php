@@ -40,7 +40,7 @@ if(isset($_GET['eliminar_img'])) {
 }
 
 // Obtener producto
-$query = "SELECT * FROM productos WHERE id = ${id}";
+$query = "SELECT * FROM productos WHERE id = {$id}";
 $resultado = mysqli_query($db, $query);
 $producto = mysqli_fetch_assoc($resultado);
 
@@ -168,7 +168,7 @@ if($_SERVER['REQUEST_METHOD'] === 'POST') {
             categoria_id = '$categoria_id',
             stock = '$stock',
             caracteristicas = '$caracteristicas'
-            WHERE id = ${id}
+            WHERE id = {$id}
         ";
 
         $resultado = mysqli_query($db, $query);

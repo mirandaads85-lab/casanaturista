@@ -7,9 +7,12 @@ require 'config/database.php';
 $db = conectarDB();
 
 function estaAutenticado() {
-    session_start();
+    if (session_status() === PHP_SESSION_NONE) {
+        session_start();
+    }
 
-    if(!$_SESSION['login']) {
+    if(empty($_SESSION['login'])) {
         header('Location: /login.php');
+        exit;
     }
 }

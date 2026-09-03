@@ -12,7 +12,7 @@ if(!$id) {
 }
 
 // Consultar categoría
-$queryCat = "SELECT * FROM categorias WHERE id = ${id}";
+$queryCat = "SELECT * FROM categorias WHERE id = {$id}";
 $resCat = mysqli_query($db, $queryCat);
 $categoria = mysqli_fetch_assoc($resCat);
 
@@ -22,7 +22,7 @@ if(!$categoria) {
 }
 
 // Consultar productos de esa categoría
-$query = "SELECT * FROM productos WHERE categoria_id = ${id}";
+$query = "SELECT * FROM productos WHERE categoria_id = {$id}";
 $resultado = mysqli_query($db, $query);
 
 incluirTemplate('header');

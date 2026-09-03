@@ -12,8 +12,8 @@ if($busqueda !== '') {
     $busqueda = mysqli_real_escape_string($db, $busqueda);
 
     $query = "SELECT * FROM productos 
-              WHERE nombre LIKE '%${busqueda}%' 
-              OR descripcion LIKE '%${busqueda}%'";
+              WHERE nombre LIKE '%{$busqueda}%' 
+              OR descripcion LIKE '%{$busqueda}%'";
 
     $resultado = mysqli_query($db, $query);
 

@@ -1,6 +1,8 @@
 <?php
 
-session_start();
+if (session_status() === PHP_SESSION_NONE) {
+    session_start();
+}
 require 'includes/app.php';
 
 $carrito = $_SESSION['carrito'] ?? [];

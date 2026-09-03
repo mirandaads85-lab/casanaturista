@@ -14,7 +14,7 @@ $busqueda = mysqli_real_escape_string($db, $busqueda);
 
 $query = "SELECT id, nombre, precio, imagen 
           FROM productos 
-          WHERE nombre LIKE '%${busqueda}%'
+          WHERE nombre LIKE '%{$busqueda}%'
           LIMIT 5";
 
 $resultado = mysqli_query($db, $query);

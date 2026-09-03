@@ -12,7 +12,7 @@ if($_SERVER['REQUEST_METHOD'] === 'POST') {
     if($id) {
 
         // Obtener imagen
-        $query = "SELECT imagen FROM productos WHERE id = ${id}";
+        $query = "SELECT imagen FROM productos WHERE id = {$id}";
         $resultado = mysqli_query($db, $query);
         $producto = mysqli_fetch_assoc($resultado);
 
@@ -22,7 +22,7 @@ if($_SERVER['REQUEST_METHOD'] === 'POST') {
         }
 
         // Eliminar registro
-        $query = "DELETE FROM productos WHERE id = ${id}";
+        $query = "DELETE FROM productos WHERE id = {$id}";
         mysqli_query($db, $query);
 
         header('Location: /admin/');
