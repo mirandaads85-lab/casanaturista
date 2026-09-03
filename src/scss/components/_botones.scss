@@ -1,0 +1,21 @@
+@use '../base/variables';
+
+/* =========================
+   BOTÓN FILTROS MOBILE
+========================= */
+
+.filtros-toggle {
+    display: none;
+    margin-bottom: 15px;
+}
+
+.filtros-toggle button {
+    width: 100%;
+    padding: 12px;
+    background: variables.$color-negro;
+    color: variables.$color-blanco;
+    border: none;
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+}

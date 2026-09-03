@@ -1,0 +1,62 @@
+@use '../base/variables';
+
+/* =========================
+   BENEFICIOS
+========================= */
+.beneficios {
+     background: linear-gradient(
+        135deg,
+        #2c2c2c 0%,
+        #3a3a3a 50%,
+        #1f1f1f 100%
+    );
+    padding: 17px 0;
+}
+
+.beneficios-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+    text-align: center;
+}
+
+.icono svg{
+    width: 110px;
+    max-width: 79px;
+}
+
+
+.beneficios h4 {
+    color: #00d9ff;
+}
+
+@media (max-width: 768px) {
+    .beneficios-grid {
+            gap: 10px;
+        }
+    .beneficios-grid .icono {
+        font-size: 20px;
+    }
+    .beneficios-grid h4 {
+            font-size: 12px;
+        }
+        .icono svg {
+            width: 110px;
+            max-width: 55px;
+        }
+        
+}.beneficios {
+    padding: 10px 0;
+}
+@media (max-width: 420px) {
+    .beneficios-grid {
+            gap: 1px;
+        }
+        .beneficios-grid h4, p {
+            font-size: 8px;
+        }
+        .icono svg{
+            width: 70px;
+            max-width: 50px;
+        }
+}

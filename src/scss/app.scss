@@ -1,0 +1,30 @@
+@use 'base/reset';
+@use 'base/globales';
+@use 'base/variables';
+
+@use 'layout/header';
+@use 'layout/footer';
+@use 'layout/grid';
+@use 'layout/whatsapp';
+
+@use 'components/botones';
+@use 'components/productos';
+@use 'components/ofertas';
+@use 'components/slider';
+@use 'components/modal';
+@use 'components/carrito';
+@use 'components/tablas';
+@use 'components/form';
+@use 'components/card';
+@use 'components/brands';
+@use 'components/beneficios';
+@use 'components/marcas';
+
+@use 'pages/home';
+@use 'pages/tienda';
+@use 'pages/nosotros';
+@use 'pages/contacto';
+@use 'pages/admin';
+
+
+

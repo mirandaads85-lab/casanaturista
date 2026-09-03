@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="640" height="160" viewBox="0 0 640 160">
+  <circle cx="55" cy="80" r="42" fill="#1f7a3d"/>
+  <path d="M55 105 C40 95 35 75 45 58 C55 75 60 90 55 105 Z" fill="#eaf6ee"/>
+  <text x="112" y="72" font-family="Arial, Helvetica, sans-serif" font-size="30" font-weight="700" fill="#145c2b">Casa Naturista</text>
+  <text x="112" y="102" font-family="Arial, Helvetica, sans-serif" font-size="22" font-weight="600" fill="#1f7a3d">La Huanuqueña</text>
+</svg>

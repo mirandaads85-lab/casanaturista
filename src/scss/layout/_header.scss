@@ -1,0 +1,612 @@
+@use '../base/variables';
+
+/* =========================
+   HEADER
+========================= */
+/* HEADER NORMAL */
+
+.header {
+    position: sticky;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    background: #ffffff;
+    transition: all 0.3s ease;
+}
+
+
+
+.header-top {
+    display: grid;
+        grid-template-columns: 242px 89px 1fr;
+    align-items: center;
+    gap: 0px 15px;
+        padding: 28px 0 0 0;
+}
+
+.logo {
+    width: 255px;
+    height: 60px;
+}
+.img-logo img {
+    width: 255px;
+    height: 60px;
+    display: flex;
+}
+
+/* BOTÓN CATEGORÍAS */
+.categorias-desktop {
+    background: variables.$color-gris;
+    padding: 10px;
+    border-radius: 6px;
+    cursor: pointer;
+    text-align: center;
+    color: variables.$color-blanco;
+}
+
+/* BUSCADOR */
+.buscador input {
+    width: 100%;
+    padding: 12px;
+    border-radius: 25px;
+    border: 0.125rem solid #000;
+    outline: none;
+    background: #ffffff;
+}
+
+.menu-toggle svg {
+        width: 46px;
+    height: 28px;
+}
+
+input::placeholder {
+    color: #999;
+    opacity: 1;
+}
+/* =========================
+   BUSCADOR PRO
+========================= */
+
+.buscador {
+    position: relative;
+}
+
+/* RESULTADOS */
+.resultados-busqueda {
+    position: absolute;
+    top: 110%;
+    left: 0;
+    width: 100%;
+    background: variables.$color-blanco;
+    border-radius: 10px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+    display: none;
+    z-index: 9999;
+    max-height: 300px;
+    overflow-y: auto;
+}
+
+/* ITEM */
+.resultado-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px;
+    text-decoration: none;
+    color: #111;
+    border-bottom: 1px solid variables.$color-blanco;
+}
+
+@media (max-width: 768px) {
+    .resultado-item {
+        padding: 4px;
+        font-size: 14px;
+    }
+}
+
+.resultado-item:hover {
+    background: variables.$color-blanco;
+}
+
+/* IMG */
+.resultado-item img {
+    width: 50px;
+    height: 50px;
+    object-fit: contain;
+}
+
+/* TEXTO */
+.resultado-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.resultado-nombre {
+    font-size: 14px;
+}
+
+.resultado-precio {
+    color: #16a34a;
+    font-weight: bold;
+    font-size: 13px;
+}
+
+
+/* CARRITO */
+.carrito {
+    background: #000000;
+    color: #ffffff;
+    padding: 8px 12px;
+    border-radius: 20px;
+    font-weight: bold;
+    text-decoration: none;
+        display: flex;
+    flex-direction: row;
+}
+
+/* HAMBURGUESA */
+.menu-toggle {
+    display: none;
+    font-size: 31px;
+    cursor: pointer;
+    color: variables.$color-blanco;
+}
+
+/* =========================
+   MENÚ NORMAL
+========================= */
+.menu-bar {
+    background: #000000d4;
+    display: block;
+    position: relative; /* 👈 CAMBIO CLAVE */
+    width: 100%;
+    z-index: 9998;
+}
+
+/* =========================
+   MENÚ desktop
+========================= */
+.menu-horizontal{
+    list-style:none;
+    display:flex;
+    justify-content:center;
+    gap: 27px;
+    margin:0;
+    padding:0;
+}
+
+.menu-horizontal > li{
+    position:relative;
+}
+
+.menu-horizontal > li > a{
+    display:block;
+    padding:15px;
+    text-decoration:none;
+    color: variables.$color-primario;
+    font-weight:600;
+}
+
+.submenu{
+    display:none;
+    position:absolute;
+    top:100%;
+    left:0;
+    min-width:220px;
+    background:#fff;
+    box-shadow:0 4px 12px rgba(0,0,0,.15);
+    list-style:none;
+    padding:0;
+    margin:0;
+    z-index:999;
+}
+
+.submenu li a{
+    display:block;
+    padding:12px 15px;
+    text-decoration:none;
+    color:#333;
+}
+
+.submenu li a:hover{
+    background:#f5f5f5;
+}
+
+.menu-horizontal li:hover .submenu{
+    display:block;
+}
+
+
+.menu-horizontal > li > .menu-padre::after{
+    content: " ▾";
+    margin-left: -3px;
+}
+
+
+.menu-bar nav {
+    display: flex;
+    gap: 20px;
+    padding: 0px 0;
+}
+
+.menu-bar a {
+    color: variables.$color-blanco;
+    text-decoration: none;
+}
+
+/* =========================
+   CATEGORÍAS MOBILE
+========================= */
+.categorias-mobile {
+    display: none;
+    flex-direction: column;
+    margin-bottom: 1rem;
+
+}
+
+/* Productos */
+.categorias-mobile > a{
+    color: #ffffff;
+    text-decoration: none;
+    display: block;
+    margin-top: 0.3rem;
+    font-size: 0.9rem;
+}
+
+/* Títulos de categoría */
+.categorias-mobile > a.grupo-cat{
+    color: #ffffff;
+    font-size: 0.8rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    margin-top: 1rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+
+}
+
+/* Hover categoría */
+.categorias-mobile > a.grupo-cat:hover{
+    color: #ffd966;
+}
+
+.titulo-cat {
+    color: variables.$color-blanco;
+    font-weight: bold;
+    margin-bottom: 8px;
+    font-size: 15px;
+}
+
+.menu-categorias{
+    width:100%;
+}
+
+.menu-item{
+    border-bottom:1px solid #ddd;
+}
+
+.menu-titulo{
+    width:100%;
+    padding:15px;
+    text-align:left;
+    border:none;
+    background:#f5f5f5;
+    cursor:pointer;
+    font-size:16px;
+    font-weight:bold;
+}
+
+.submenu{
+    display:none;
+    padding:10px 20px;
+    background:white;
+        z-index: 9999;
+}
+
+.submenu a{
+    display:block;
+    padding:8px 0;
+    text-decoration:none;
+    color:#333;
+}
+
+.submenu a:hover{
+    color:#007bff;
+}
+
+.submenu.activo{
+    display:block;
+}
+
+/* =========================
+   BOTONES
+========================= */
+.botonp {
+    display: block;
+    text-align: center;
+      background: #DAA520;
+    color: #000000;
+    padding: 10px;
+    border-radius: 8px;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.boton:hover {
+    background: variables.$color-primario;
+}
+
+
+.detalle-info span {
+        font-size: 25px !important;
+        border-bottom: 0px;
+    }
+/* =========================
+   RESPONSIVE
+========================= */
+
+.ficha-tecnica {
+    padding: 0 0px 0px 0px;
+}
+.detalle-info a {
+    background-color: #009d29;
+    font-weight: 500;
+    color: #ffffff;
+    }
+
+@media (max-width: 950px) {
+
+    .detalle-info span {
+        font-size: 20px !important;
+    }
+}
+
+
+@media (max-width: 942px) {
+
+    .header-top {
+        grid-template-columns: 1fr auto;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+
+    .categorias-desktop {
+        display: none;
+    }
+
+    .menu-bar nav {
+        display: none;
+        flex-direction: column;
+        padding: 12px;
+    }
+
+    .menu-bar nav.active {
+        display: flex;
+    }
+
+    /* 🔥 ACTIVA CATEGORÍAS EN MOBILE */
+    .categorias-mobile {
+        display: flex;
+    }
+
+    /* 🔥 DESACTIVA MEGA MENÚ EN MOBILE */
+    .menu-categorias {
+        display: none !important;
+    }
+
+    .productos {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .detalle-producto {
+        grid-template-columns: 1fr;
+    }
+
+    .ficha-tecnica {
+        padding: 0px 0px 0px 19px;
+
+    
+    }
+    .precio-card span {
+    font-size: 15px;
+}
+    
+}
+.h3producto {
+    color: #ffffff;
+    font-size: clamp(1.5rem, 3.2vw, 2.4rem);
+}
+
+
+  /* 🔥 ul tipo cuadros */
+.ficha-tecnica ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.ficha-tecnica li {
+        padding: 12px 6px;
+    border-bottom: 1px solid #ffffff;
+    display: flex;
+    gap: 8px;
+    align-items: flex-start;
+}
+
+/* 🔥 separa mejor el título (Procesador:) del valor */
+.ficha-tecnica li strong {
+    min-width: 85px;
+    display: inline-block;
+   color: #ffffff;
+}
+
+.ficha-tecnica li:last-child {
+    border-bottom: none;
+}
+
+
+
+
+
+
+
+
+
+
+.detalle-info p {
+    font-size: 22px;
+}
+
+@media (max-width: 480px) {
+
+    .productos {
+        grid-template-columns: 1fr;
+    }
+    .detalle-info {
+        padding: 0 0px 0px 8px;
+    }
+    .detalle-info h1 {
+        font-size: 25px;
+    }
+    .detalle-info span {
+        font-size: 15px !important;
+    }
+    .detalle-info p {
+        font-size: 15px;
+    }
+    .precio-card span {
+    font-size: 15px;
+}
+
+}
+
+ .header-top .acciones {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+@media (max-width: 840px){
+    .buscador {
+        width: 100%;
+        
+    }
+}
+@media (max-width: 942px) {
+
+    .header-top {
+        display: grid;
+        grid-template-columns: 1fr auto;
+        grid-template-areas:
+            "logo carrito"
+            "menu buscador";
+        gap: 10px;
+                margin-bottom: 10px;
+        
+    }
+
+
+    .buscador input {
+
+    padding: 9px;
+
+}
+.header-top .acciones {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+        
+        }
+
+    .logo {
+        width: 240px;
+        height: 60px;
+    }
+    .img-logo img {
+        width: 240px;
+        height: 60px;
+        display: flex;
+    }
+
+
+    .menu-toggle {
+        grid-area: menu;
+        display: block;
+        justify-self: start;
+        color: #000000;
+    }
+
+    .acciones {
+        grid-area: carrito;
+        display: flex;
+        justify-content: flex-end;
+    }
+
+    /* 🔥 Oculta botón categorías en móvil */
+    .categorias-desktop {
+        display: none;
+    }
+
+}
+
+@media (max-width: 720px) {
+
+    .logo {
+         width: 220px;
+        height: 59px;
+    }
+
+.img-logo img {
+        width: 220px;
+        height: 59px;
+    }
+}
+
+.resultados-busqueda .precio-consultar {
+    color: #000;
+    font-size: 14px;
+    font-weight: 400;
+    font-style: normal;
+}
+
+@media (max-width: 390px) {
+.resultado-item {
+        padding: 1px 3px;
+        font-size: 13px;
+    }
+.resultados-busqueda .precio-consultar {
+    font-size: 13px;
+
+}
+}
+
+@media (max-width: 318px) {
+
+    .logo {
+         width: 203px;
+        height: 59px;
+    }
+
+.img-logo img {
+        width: 203px;
+        height: 59px;
+    }
+
+
+    
+}
+
+@media (max-width: 302px) {
+
+    .logo {
+         width: 180px;
+        height: 55px;
+    }
+
+.img-logo img {
+         width: 180px;
+        height: 55px;
+    }
+}
+
+

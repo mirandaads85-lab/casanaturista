@@ -1,0 +1,539 @@
+@use '../base/variables';
+
+/* =========================
+   🔥 ADMIN PANEL
+========================= */
+
+.admin-panel h1 {
+    margin-bottom: 20px;
+}
+
+/* HEADER ADMIN */
+.admin-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 16px 0 10px 0;
+}
+
+
+.admin-acciones {
+    display: grid;
+    grid-auto-flow: column;
+    gap: 10px;
+}
+
+@media (max-width:328px) {
+    .admin-acciones {
+            display: flex;
+            gap: 0px;
+            flex-direction: column;
+            align-items: center;
+    }
+}
+
+/* 🔥 CONTADOR / AVISO DE LÍMITE DE PRODUCTOS */
+.contador-limite {
+    margin: 0 0 16px;
+    padding: 10px 14px;
+    background: variables.$color-primario-claro;
+    color: variables.$color-primario-oscuro;
+    border-radius: 8px;
+    font-size: 14px;
+    display: inline-block;
+}
+
+.contador-limite.limite-lleno {
+    background: #fdecea;
+    color: #b3261e;
+    font-weight: 600;
+}
+
+/* 🔥 BOTÓN SECUNDARIO DEL ADMIN (ej: "Categorías") */
+.boton-secundario-admin {
+    background: variables.$color-blanco;
+    color: variables.$color-primario;
+    border: 1.5px solid variables.$color-primario;
+    padding: 10px 15px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: 600;
+    display: inline-block;
+}
+
+.boton-secundario-admin:hover {
+    background: variables.$color-primario-claro;
+}
+
+/* 🔥 PRECIO TACHADO EN LA TABLA DEL ADMIN */
+.precio-tachado {
+    text-decoration: line-through;
+    color: #888;
+    font-size: 12px;
+    display: block;
+}
+
+/* 🔥 CATEGORÍAS: form de creación rápida */
+.form-categoria-nueva {
+    margin-bottom: 25px;
+}
+
+.form-categoria-nueva .campo-grid {
+    align-items: end;
+    grid-template-columns: 1fr;
+    margin-bottom: 15px;
+}
+
+@media (min-width: 480px) {
+    .form-categoria-nueva {
+        display: flex;
+        align-items: flex-end;
+        gap: 12px;
+    }
+
+    .form-categoria-nueva .campo-grid {
+        flex: 1;
+        margin-bottom: 0;
+    }
+}
+
+/* 🔥 CATEGORÍAS: edición del nombre en línea dentro de la tabla */
+.form-editar-categoria {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+}
+
+.form-editar-categoria input[type="text"] {
+    padding: 6px 8px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    min-width: 140px;
+}
+
+
+
+/* TABLA */
+.tabla-admin {
+    width: 100%;
+    border-collapse: collapse;
+    background: variables.$color-blanco;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.tabla-admin thead {
+    background: variables.$color-gris;
+    color: variables.$color-blanco;
+}
+
+.tabla-admin th,
+.tabla-admin td {
+    padding: 12px;
+    text-align: center;
+    border-bottom: 1px solid #ffffff;
+}
+.tabla-admin td {
+    color: #000000;
+}
+
+
+/* HOVER */
+.tabla-admin tbody tr:hover {
+    background: variables.$color-blanco;
+}
+
+/* IMAGEN */
+.img-admin {
+    width: 70px;
+    height: 70px;
+    object-fit: contain;
+}
+
+.galeria-admin h3 {
+    color: #ffffff;
+}
+/* NOMBRE */
+.nombre-prod {
+    text-align: left;
+}
+
+/* PRECIO */
+.precio-admin {
+    color: #16a34a;
+    font-weight: bold;
+}
+
+/* STOCK */
+.stock {
+    padding: 4px 10px;
+    border-radius: 6px;
+    color: variables.$color-negro;
+    font-weight: bold;
+    font-size: 11px;
+}
+
+.stock.bajo {
+    background: variables.$color-rojo;
+}
+
+/* ACCIONES */
+.acciones-admin {
+    display: flex;
+    gap: 5px;
+    justify-content: center;
+    flex-wrap: nowrap;
+    flex-direction: column;
+}
+
+.btn-editar {
+    background: variables.$color-celeste;
+    color: variables.$color-blanco;
+    padding: 6px 10px;
+    border-radius: 5px;
+    text-decoration: none;
+}
+
+.btn-eliminar {
+    background: variables.$color-rojo;
+    color: variables.$color-blanco;
+    padding: 6px 10px;
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+}
+
+.btn-eliminar:disabled {
+    background: #ccc;
+    cursor: not-allowed;
+}
+
+/* =========================
+   📱 RESPONSIVE TABLET
+========================= */
+
+@media (max-width: 768px) {
+
+    .admin-header {
+        flex-direction: column;
+        gap: 10px;
+        align-items: center;
+    }
+
+    .tabla-admin th,
+    .tabla-admin td {
+        padding: 9px;
+        font-size: 12px;
+    }
+
+    .img-admin {
+        width: 50px;
+        height: 50px;
+    }
+}
+
+/* =========================
+   📱 MOBILE PRO (CARD MODE)
+========================= */
+@media (max-width: 545px) {
+    .tabla-admin th,
+    .tabla-admin td {
+        padding: 5px;
+        font-size: 11.5px;
+    }
+    
+}
+
+@media (max-width: 480px) {
+
+    .tabla-admin thead {
+        display: none;
+    }
+
+    .tabla-admin,
+    .tabla-admin tbody,
+    .tabla-admin tr,
+    .tabla-admin td {
+        display: flex;
+        width: 100%;
+        flex-direction: column;
+        align-items: center;
+        align-content: center;
+        justify-content: center;
+    }
+
+    .tabla-admin tr {
+        background: variables.$color-blanco;
+        margin-bottom: 15px;
+        padding: 10px;
+        border-radius: 10px;
+        box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    }
+
+    .tabla-admin td {
+        text-align: left;
+        padding: 1px 0;
+        border: none;
+    }
+
+    .acciones-admin {
+        justify-content: flex-start;
+        margin-top: 10px;
+    }
+
+    .img-admin {
+        width: 100%;
+        height: auto;
+    }
+}
+
+
+
+/* =========================
+   🔥 actualizar admin
+========================= */
+
+
+.admin-form h1 {
+    margin-bottom: 20px;
+}
+
+/* ALERTA */
+.alerta-error {
+    background: variables.$color-blanco;
+    color: variables.$color-rojo;
+    padding: 10px;
+    border-radius: 6px;
+    margin-bottom: 10px;
+}
+
+/* FORM */
+.form-admin {
+    background: variables.$color-blanco;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+}
+
+/* FIELDSET */
+.form-admin fieldset {
+    border: none;
+    margin-bottom: 20px;
+}
+
+.form-admin legend {
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: variables.$color-gris;
+}
+
+/* CAMPOS */
+.campo {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 15px;
+}
+
+.campo label {
+    font-weight: 600;
+    margin-bottom: 5px;
+        color: #000000;
+}
+
+.campo input,
+.campo textarea,
+.campo select {
+    padding: 10px;
+    border-radius: 6px;
+    border: 1px solid variables.$color-blancogris;
+    outline: none;
+}
+
+/* GRID */
+.campo-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+}
+
+/* IMG PREVIEW */
+.img-preview {
+    border-radius: 8px;
+    margin-top: 10px;
+    width: 100%;
+    max-width: 30rem;
+}
+
+/* previsualizar multiples img galeria actualizar */
+.preview-galeria {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin-top: 10px;
+}
+
+.preview-galeria img {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    border-radius: 6px;
+    border: 1px solid variables.$color-blanco;
+}
+
+.preview-img {
+    width: 150px;
+    margin-top: 10px;
+    display: none;
+}
+
+.preview-galeria {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin-top: 10px;
+}
+
+.preview-galeria img {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    border-radius: 6px;
+    border: 1px solid variables.$color-blanco;
+}
+
+
+/* BOTÓN eliminar img de galeria actualizar */
+.preview-galeria {
+    display: flex;
+    gap: 10px;
+    margin-top: 10px;
+    flex-wrap: wrap;
+}
+
+.preview-galeria img {
+    width: 80px;
+    border-radius: 6px;
+}
+
+.img-item {
+    position: relative;
+    display: inline-block;
+}
+
+.img-item img {
+    width: 100px;
+    border-radius: 6px;
+}
+
+
+/* BOTÓN FULL */
+.boton-full {
+    width: 100%;
+    margin-top: 10px;
+}
+
+/* =========================
+   📱 TABLET
+========================= */
+
+@media (max-width: 768px) {
+
+    .campo-grid {
+        grid-template-columns: 1fr;
+    }
+
+}
+
+/* =========================
+   📱 MOBILE
+========================= */
+
+@media (max-width: 480px) {
+
+    .form-admin {
+        padding: 15px;
+    }
+
+    .img-preview {
+        width: 100%;
+    }
+
+    .campo input,
+    .campo textarea,
+    .campo select {
+        font-size: 14px;
+        width: 100%;
+    }
+}
+
+
+.preview-img {
+    width: 100%;
+    max-width: 30rem;
+}
+
+
+/* =========================
+   login stilos
+========================= */
+.login-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 80vh;
+    background: variables.$color-blanco;
+}
+
+.login-box {
+    background: variables.$color-blanco;
+    padding: 30px;
+    width: 350px;
+    border: 1px solid variables.$color-blancogris;
+    border-radius: 8px;
+}
+
+.login-box h1 {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.login-box label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #000000;
+}
+
+.login-box input[type="email"],
+.login-box input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid variables.$color-blancogris;
+    border-radius: 4px;
+}
+
+.login-box input:focus {
+    border-color: variables.$color-amarillo;
+    outline: none;
+}
+
+.btn-login {
+    width: 100%;
+    background: variables.$color-amarillo;
+    border: 1px solid variables.$color-amarillogris;
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 4px;
+    font-weight: bold;
+}
+
+.btn-login:hover {
+    background: #ddb347;
+}
+
+.error {
+    color: variables.$color-rojo;
+    margin-bottom: 10px;
+}
+
