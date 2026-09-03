@@ -1668,7 +1668,7 @@ input::placeholder {
   }
 }
 .card-oferta {
-  flex: 0 0 230px;
+  flex: 0 0 242px;
   background: #ffffff;
   border-radius: 16px;
   overflow: hidden;
@@ -1735,7 +1735,7 @@ input::placeholder {
 ========================= */
 @media (max-width: 768px) {
   .card-oferta {
-    flex: 0 0 190px;
+    flex: 0 0 240px;
   }
   .card-oferta-imagen img {
     height: 140px;
